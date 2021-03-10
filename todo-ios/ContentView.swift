@@ -6,11 +6,16 @@
 //
 
 import SwiftUI
+let metro = ["The oral cigarettes","04 limited sazabyz","BLUE ENCOUNT","キュウソネコカミ","夜の本気ダンス","Hi standerd","ELLE GARDEN","SiM","coldrain","HEY SMITH"]
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello")
-            .padding()
+        List(0 ..< 10) { item in
+            HStack {
+                Text(String(item))
+                Text(metro[item])
+            }
+        }
     }
 }
 
