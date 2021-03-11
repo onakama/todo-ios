@@ -6,16 +6,25 @@
 //
 
 import SwiftUI
-let metro = ["The oral cigarettes","04 limited sazabyz","BLUE ENCOUNT","キュウソネコカミ","夜の本気ダンス","Hi standerd","ELLE GARDEN","SiM","coldrain","HEY SMITH"]
+let metro = ["The oral cigarettes","04 limited sazabyz","BLUE ENCOUNT","SiM","coldrain","HEY SMITH"]
 
 struct ContentView: View {
     var body: some View {
-        List(0 ..< 10) { item in
-            HStack {
-                Text(String(item))
-                Text(metro[item])
+        List{
+            Section(header: Text("ONAKAMA").font(.largeTitle).padding(.top),
+                    footer: Text("ライブ行きたい。")){
+                ForEach(0 ..< 3){index in
+                    Text(metro[index])
+                }
+            }
+            Section(header: Text("TRIPLE AXE").font(.largeTitle).padding(.top),
+                    footer: Text("ライブ行きたい。")){
+                ForEach(3 ..< 6){index in
+                    Text(metro[index])
+                }
             }
         }
+        .listStyle(GroupedListStyle())
     }
 }
 
